@@ -1,0 +1,44 @@
+<app-adminsidebar></app-adminsidebar>
+<div class="col-md-4 offset-4 mt-4 card">
+    <div class="card-body">
+        <h1 class="h1 text-center" style="color:cyan">Search</h1>
+      <form action="/admin/searchproductbykeyword" [formGroup]="searchproductnameform" (ngSubmit)="submit()" method="GET">
+        <div class="form-group">
+          <label for="productname">Product Name</label>
+          <input formControlName="productname" type="text" class="form-control"
+          name="productname" (input)="prod($event)">
+           <div *ngIf="productname.touched && productname.invalid">
+            <div *ngIf="productname.errors.required">Required Field</div>
+          </div> 
+          </div>
+          <div class ="form-group">
+            <button [disabled]="searchproductnameform.invalid" class="btn btn-primary">Search</button>
+          </div>
+          </form> 
+          </div>
+          </div>
+         <div class="container">
+          
+         </div>
+                <div class="container" >
+                    <h4 class="h4 text-center">Searched Product</h4>
+                  <table *ngIf="show()" class="table table-bordered" style="margin-left: 10%; border-top:10%">
+                      <tr><th>Product Id</th>
+                      <th>Product Name</th>
+                      <th>category</th>
+                      <th>quantity</th>
+                      <th>Price</th>
+                      <th>Description</th>
+                    </tr>
+                      <tr *ngFor="let product of productsearch">
+                      <td>{{product.productId}}</td>
+                      <td>{{product.productName}}</td>
+                      <td>{{product.category}}</td>
+                      <td>{{product.quantity}}</td>
+                      <td>{{product.price}}</td>
+                      <td>{{product.description}}</td>
+                      </tr>
+                      </table>
+                      <div style="color: red;margin-left: 10%">{{msg}}</div>
+                    </div>
+                  

@@ -1,0 +1,91 @@
+
+
+
+<app-header></app-header>
+
+  <!-- <table class="table table-bordered" >
+    <tr>
+    <th>cartId</th>
+    <th>customerId</th> 
+    <th>productId</th>
+    <th>ProductCount</th>
+    <th>Total</th>
+    <th>Remove</th>
+  </tr>
+  <tr  >
+
+    <td>{{posts.cartId}}</td>
+    <td>{{posts.customerId}}</td> 
+    <td>{{posts.product1Id}}</td>
+    <td>{{posts.product1Count}}</td>
+    <td>{{posts.total_price}}</td>
+  <td>
+    <button class="btn btn-danger" (click)="removeUser(posts) ">
+      Remove
+    </button>
+  </td>
+</tr>
+
+
+  
+</table>   -->
+
+
+
+
+
+<body class="bg">
+  
+
+      <h1 *ngIf="show()" class="h1 text-center">Shopping Cart</h1>
+<table *ngIf="show()" class="table table-bordered" id="cart">
+    
+  <tr>
+   <th> ProductId</th>
+   <th>Quantity</th>
+   <th>Remove</th>
+
+</tr>
+<tr  *ngIf="posts.product1Id!=0 && posts.product1Count!=0">
+    <td>{{posts.product1Name}}</td>
+    <td>{{posts.product1Count}}</td>
+    <td>
+        <button class="btn btn-danger" (click)="removeProduct(posts) ">
+          Remove
+        </button>
+      </td>
+    </tr>
+<tr *ngIf="posts.product2Id!=0 && posts.product2Count!=0" >
+    <td>{{posts.product2Name}}</td>
+    <td>{{posts.product2Count}}</td>
+  <td>
+    <button class="btn btn-danger" (click)="removeProduct(posts) ">
+      Remove
+    </button>
+  </td>
+</tr>
+<tr  *ngIf="posts.product3Id!=0 && posts.product3Count!=0"  >
+    <td>{{posts.product3Name}}</td>
+    <td>{{posts.product3Count}}</td>
+  <td>
+    <button class="btn btn-danger" (click)="removeProduct(posts) ">
+      Remove
+    </button>
+  </td>
+</tr>
+    <tr >
+        <th colspan="2"> Total price</th>
+      <th >{{posts.totalPrice}}</th>
+   </tr>   
+   <td>
+    <button class="btn btn-primary" (click)="placeOrder() ">
+      Place Order
+    </button>
+  </td>
+  </table>
+</body>
+  
+
+
+
+

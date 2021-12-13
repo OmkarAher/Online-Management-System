@@ -1,0 +1,28 @@
+<app-header></app-header>
+<body class="bg">
+  
+
+<div class="container">
+  <h4 style="margin-left: 40%;border-top: 4%">:: Customers ::</h4>
+<table class="table table-bordered" style="margin-left: 10%; margin-top:3%;background-color: transparent">
+  <tr><th>Product</th>
+  <th>Product</th>
+  <th>Product</th>
+  <th>Price</th>
+  <th>Address</th>
+<th>Cancel Order</th></tr>
+  <tr *ngFor="let post of posts">
+  <td>{{post.product1Name}}</td>
+  <td>{{post.product2Name}}</td>
+  <td>{{post.product3Name}}</td>
+  <td>{{post.totalPrice}}</td>
+  <td>{{post.address.apartment}} {{post.address.street}}</td>
+<td><button class="btn btn-danger" (click)="cancelOrder(post)">Cancel Order </button></td></tr>
+ 
+</table>
+<br>
+<h3 style="color: red;margin-left: 10% ">{{msg}}</h3>
+</div>
+
+
+</body>

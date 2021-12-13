@@ -1,0 +1,23 @@
+<div class="col-md-4 offset-4 mt-4 card" color>
+    <div class="card-body">
+      <form action="/order/cancelOrder/" [formGroup]="cancelOrderform"    (ngSubmit)="submit()"  method="DELETE">
+  
+  <div class="form-group">
+    <label for="orderId">Enter orderId</label><br>
+    <input type="text" class="form-control" id="orderId"  name="orderId"
+    placeholder="Enter order id" (input)=displayOrderId($event)>
+  </div>
+  <div class="form-group">
+    <label for="customerId">Enter customerId</label><br>
+    <input type="text"  class="form-control"  
+    placeholder="Enter customerId" (input)=displayCustomerId($event)>
+  </div>
+
+  <button type="submit" class="btn btn-primary" >
+    Submit</button>
+    
+</form>
+</div>
+</div>
+
+

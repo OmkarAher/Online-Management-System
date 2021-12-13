@@ -1,0 +1,116 @@
+<app-header></app-header>
+
+<body class="bg">
+    <nav class="navbar navbar-expand-lg navbar-custom bg-custom navbar-custom">
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto ml-auto">
+            <li class="nav-item">
+              <div class="justify-content-md-center">
+                <form class="form-inline my-2 my-lg-0 my-lg-0" (ngSubmit)=onsubmit()>
+                  <input type="text" class="form-control" id="productName" name="productName"
+                    placeholder="Search Products" (input)=product($event) style="width: 1000px">
+                  <div class="form-group">
+                    <button style="margin-left: 30px" class="btn btn-primary">Search</button>
+                  </div>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  <!-- <div class="row">
+<div *ngFor="let product of productsearch;let i = index" class="col-md-2 offset-0.4 mt-2 card-body" style="background: transparent">
+  <div *ngIf = "i<6"  class="card" style="background: transparent">
+    <h4 style="color: white">Name:{{product.productName}}</h4>
+    <p style="color: white">Price:{{product.price}}</p>
+    <p style="color: white">Description:{{product.description}}</p>
+    <button (click)="addToCart(product)" class="btn btn-outline-light float-right">Add To Cart</button>
+  </div> 
+</div>
+</div>
+<div class="row"> -->
+  <div *ngIf="!show()" class="row">
+    <div *ngFor="let product of productsearch;let i = index" class="col-md-2 offset-0.4 mt-2 card-body"
+      style="background: transparent">
+      <div class="card" *ngIf="i<6" style="background: transparent">
+        <div *ngIf="i==0"><img style="width:100%" src="/src/assets/crocin.jpg"></div>
+        <div *ngIf="i==1"><img style="width:57%; " src="/src/assets/vicks.png"></div>
+        <div *ngIf="i==2"><img style="width:115%" src="/src/assets/Sinarest.jpg"></div>
+        <div *ngIf="i==3"><img style="width:107%" src="/src/assets/coldtotal.png"></div>
+        <div *ngIf="i==4"><img style="width:90%" src="/src/assets/combiflam.jpg"></div>
+        <div *ngIf="i==5"><img style="width:93%" src="/src/assets/nazi.jpg"></div>
+
+        <h5 style="color: white">{{product.productName}}</h5>
+        <p style="color: white" class="price">₹{{product.price}}</p>
+        <p style="color: white">{{product.description}}</p>
+        <p><button (click)="addToCart(product)">Add to Cart</button></p>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <form (ngSubmit)="onsubmit()">
+      <input style="margin-left:30px;width:500px;background: transparent;margin-top: 50px" (input)=product($event)
+        type="search" name="search" id="search" class="form-control" placeholder="Search Product" aria-label="search">
+      <br>
+      <button style="margin-left:30px" class="btn btn-primary">Search</button>
+    </form>
+  </div> -->
+  <div *ngIf="show()" class="container">
+    <h4 class="h4 text-center" style="color: white">Searched Product</h4>
+    <table class="table table-bordered" style="margin-left: 10%; border-top:10%">
+      <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>category</th>
+        <th>quantity</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Add To Cart</th>
+      </tr>
+      <tr *ngFor="let product of productsearch">
+        <td>{{product.productId}}</td>
+        <td>{{product.productName}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.quantity}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.description}}</td>
+        <td><button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button></td>
+      </tr>
+    </table>
+    <div style="color: red;margin-left: 10%">{{msg}}</div>
+  </div>
+</body>
+<app-footer></app-footer>
+
+
+
+
+
+<!-- <div class="container" >
+  <h4 class="h4 text-center">::Searched Product::</h4>
+<table class="table table-bordered" style="margin-left: 10%; border-top:10%">
+    <tr><th>Product Id</th>
+    <th>Product Name</th>
+    <th>category</th>
+    <th>quantity</th>
+    <th>Price</th>
+    <th>Description</th>
+    <th>Add To Cart</th>
+  </tr>
+    <tr *ngFor="let product of productsearch">
+    <td>{{product.productId}}</td>
+    <td>{{product.productName}}</td>
+    <td>{{product.category}}</td>
+    <td>{{product.quantity}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+    <td><button (click)="addToCart(product)" class="btn btn-primary">Add To Cart</button></td>
+    </tr>
+    </table>
+    <div style="color: red;margin-left: 10%">{{msg}}</div>
+  </div> -->

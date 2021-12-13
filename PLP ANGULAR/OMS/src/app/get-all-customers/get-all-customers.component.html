@@ -1,0 +1,29 @@
+<app-adminsidebar></app-adminsidebar>
+
+<div class="container">
+  <h4 style="margin-left: 40%;border-top: 4%">:: Customers ::</h4>
+<table class="table table-bordered" style="margin-left: 10%; margin-top:3%;background-color: whitesmoke">
+  <tr><th>Name</th>
+  <th>Email</th>
+  <th>Age</th>
+  <th>Gender</th>
+  
+  <th>Wallet Balance</th>
+  <th>Customer Id</th>
+  <th>Contact</th>
+<th>Remove</th></tr>
+  <tr *ngFor="let post of posts">
+  <td>{{post.customerName}}</td>
+  <td>{{post.email}}</td>
+  <td>{{post.age}}</td>
+  <td>{{post.gender}}</td>
+  
+  <td>{{post.walletBalance}}</td>
+  <td>{{post.customerId}}</td>
+  <td>{{post.contact}}</td>
+<td><button class="btn btn-danger" (click)="removeCustomer(post)">Remove </button></td></tr>
+ 
+</table>
+<br>
+<h3 style="color: red;margin-left: 10% ">{{msg}}</h3>
+</div>

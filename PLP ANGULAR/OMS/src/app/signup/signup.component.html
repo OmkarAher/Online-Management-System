@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="col-md-4 offset-4 mt-4 card">
+  <div class="card-body">
+    <h1 class="h1 text-center" style="color:black">Register</h1>
+    <form action="/customer/create" [formGroup]="registerform" (ngSubmit)="submit()" method="POST">
+      <div class="form-group">
+        <label for="username">username</label>
+        <input formControlName="customerName" type="text" 
+         class="form-control" id="customerName" name="customerName"
+          required>
+      </div>
+      <div class="form-group">
+          <label for="password">password</label>
+          <input formControlName="password" type="password" class="form-control" id="password">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input formControlName="email" type="text" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+          <label for="addressId">AddressId</label>
+          <input formControlName="addressId" type="text" class="form-control" id="addressId">
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input formControlName="age" type="text" class="form-control" id="age">
+        </div>
+        <div class="form-group">
+          <label for="customerId">UserId</label>
+          <input formControlName="customerId" type="text" class="form-control" id="customerId">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary float-left">Register</button>
+          </div>
+
+    </form>
+  </div>
+</div>

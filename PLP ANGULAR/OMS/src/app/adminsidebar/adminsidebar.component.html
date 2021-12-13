@@ -1,0 +1,52 @@
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<div class="row">
+    <!-- uncomment code for absolute positioning tweek see top comment in css -->
+    <!-- <div class="absolute-wrapper"> </div> -->
+    <!-- Menu -->
+    <div class="side-menu">
+
+        <nav class="navbar navbar-default" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="brand-wrapper">
+                    <!-- Brand -->
+                    <div class="brand-name-wrapper">
+                        <a class="navbar-brand" routerLink="/adminhome">
+                            ADMIN
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Main Menu -->
+            <div class="side-menu-container">
+                <ul class="nav navbar-nav">
+
+                    <li><a *ngIf="service.isUserLoggedIn()" routerLink="/getAllCustomers"><span></span>Get All
+                            Customers</a></li>
+                    <li><a *ngIf="service.isUserLoggedIn()" routerLink="/searchCustomer"><span></span>Search Customer by
+                            Customer Id </a></li>
+                    <li><a *ngIf="service.isUserLoggedIn()" routerLink="/getAllProducts"><span></span> Get All
+                            Products</a></li>
+                    <li><a *ngIf="service.isUserLoggedIn()" routerLink="/addproduct"><span></span> Add Product</a></li>
+                    <li><a *ngIf="service.isUserLoggedIn()" routerLink="/searchproduct"><span></span>Search Product by
+                            Product Id</a></li>
+                    <li><a *ngIf="service.isUserLoggedIn()" routerLink="/searchproductbykey"><span></span>Search Product
+                            by Product Name </a></li>
+                    <li><a *ngIf="service.isUserLoggedIn()" routerLink="/updateproduct"><span></span>Change Product
+                            Details</a></li>
+                    <li><a *ngIf="service.isUserLoggedIn()" routerLink="/logout"><span></span>Logout</a></li>
+
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+    </div>
+</div>

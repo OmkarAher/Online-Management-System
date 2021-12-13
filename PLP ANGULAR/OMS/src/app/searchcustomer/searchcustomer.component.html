@@ -1,0 +1,36 @@
+
+  <app-adminsidebar></app-adminsidebar>
+<div class="col-md-4 offset-4 mt-4 card">
+  <div class="card-body">
+    <h1 class="h1 text-center" style="color:black">Search</h1>
+    <form action="/customer/searchCustomer" [formGroup]="searchform" (ngSubmit)="onSearch()" method="POST">
+      <div class="form-group">
+        <label for="customerId">Customer Id</label>
+        <input formControlName="customerId" type="number" class="form-control" name="customerId">
+        <div *ngIf="customerId.touched && customerId.invalid">
+          <div *ngIf="customerId.errors.required">Required Field</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button (click)=hide() [disabled]="searchform.invalid" class="btn btn-primary">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="container">
+<div *ngIf="hide()" class="col-md-4 offset-4 mt-4 card" style="background-color: whitesmoke">
+  <div class="card-body">
+    <h4 class="h4 text-center">Searched Customer</h4>
+    <div>Customer Id:- {{customer.customerId}}</div>
+    <div>Name:- {{customer.customerName}}</div>
+    <div>Email:- {{customer.email}}</div>
+    <div>Age:- {{customer.age}}</div>
+    <div>Gender:- {{customer.gender}}</div>
+    <div>wallet Balance:- {{customer.walletBalance}}</div>
+    <div>Contact Number:- {{customer.contact}}</div>
+    <div><button class="btn btn-danger" (click)="removeCustomer(customer)">{{remove}}</button></div>
+    <div style="color: red">{{msg}}</div>
+  </div>
+</div>
+</div>
+

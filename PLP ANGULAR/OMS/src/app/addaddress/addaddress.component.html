@@ -1,0 +1,81 @@
+
+<body class="bg">
+  
+
+<div class="col-md-4 offset-4 mt-4 card" style="background: transparent">
+  <div class="card-body" style="background: transparent">
+    <h1 class="h1 text-center" style="color:white">Add Address</h1><BR>
+    <form [formGroup]="addaddress" (ngSubmit)="onSubmit()">
+      <!-- <div class="form-group">
+        <label for="userid">CustomerId</label>
+        <input type="text" style="color:white" class="form-control" id="userid" name="customerId" formControlName="customerId" placeholder="Enter Id"
+        [ngClass]="{ 'is-invalid': f.customerId.touched && f.customerId.errors }" />
+        <div *ngIf="f.customerId.errors" class="invalid-feedback">
+          <div *ngIf="f.customerId.errors.required">Customer Id is required</div>
+           <div *ngIf="customerId.errors['uniqueId']">CustomerId already Exist</div> -->
+        <!-- </div>
+      </div> --> 
+      <div class="formGroup">
+        <label for="appartmentName" style="color:white">Apartment Name :</label>
+        <input type="text" formControlName="apartment" id="appartmentName" name="apartment" class="form-control"
+          placeholder="Enter Apartment name" [ngClass]="{ 'is-invalid': f.apartment.touched && f.apartment.errors }" />
+        <div *ngIf="f.apartment.errors" class="invalid-feedback">
+          <div *ngIf="f.apartment.errors.required">Apartment Name is required</div>
+        </div>
+      </div>
+
+      <div class="formGroup">
+        <label for="street" style="color:white">Street:</label>
+        <input type="text" formControlName="street" name="street" class="form-control" placeholder="Enter Street name"
+          [ngClass]="{ 'is-invalid': f.street.touched && f.street.errors }" />
+        <div *ngIf="f.street.errors" class="invalid-feedback">
+          <div *ngIf="f.street.errors.required">Street Name is required</div>
+        </div>
+      </div>
+
+      <div class="formGroup">
+        <label for="city" style="color:white">City:</label>
+        <input type="text" formControlName="city" id="city" name="city" class="form-control"
+          placeholder="Enter City name" [ngClass]="{ 'is-invalid': f.city.touched && f.city.errors }" />
+        <div *ngIf="f.city.errors" class="invalid-feedback">
+          <div *ngIf="f.city.errors.required">City Name is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="pincode" style="color:white">Pincode :</label>
+        <input type="text" formControlName="pincode" name="pincode" id="pincode" class="form-control"
+          placeholder="400065" [ngClass]="{ 'is-invalid': f.pincode.touched && f.pincode.errors }" />
+        <div *ngIf="f.pincode.errors" class="invalid-feedback">
+          <div *ngIf="f.pincode.errors.required">Pincode is required</div>
+          <div *ngIf="f.pincode.errors.minlength">Pincode must be a number <br> Pincode must be at least 6 digits </div>
+          <div *ngIf="f.pincode.errors.maxlength">Pincode must be at least 6 digits </div>
+        </div>
+      </div>
+
+
+      <div class="formGroup">
+        <label for="state" style="color:white">State:</label>
+        <input type="text" formControlName="state" class="form-control" id="state" name="state"
+          placeholder="Enter State name" [ngClass]="{ 'is-invalid': f.state.touched && f.state.errors }" />
+        <div *ngIf="f.state.errors" class="invalid-feedback">
+          <div *ngIf="f.state.errors.required">State Name is required</div>
+        </div>
+      </div>
+
+      <br>
+
+
+      <div class="form-group">
+        <button [disabled]="addaddress.invalid" class="btn btn-outline-primary">
+          <h1 class="h4 text-center" style="color:red"></h1>ADD ADDRESS>
+        </button>
+      </div>
+    </form>
+    </div>
+    </div>
+  </body>
+    <!-- </div>
+</div>
+</div>
+</div> -->

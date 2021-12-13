@@ -1,0 +1,33 @@
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<nav *ngIf="service.isCustomerLoggedIn()" class="navbar navbar-expand navbar-dark bg-dark">
+    <img src="/src/assets/image.png" height="50px " width="70px">
+  <a style="margin-left: 30px" *ngIf="service.isCustomerLoggedIn()" routerLink="/customerHome" class="navbar-brand">Home</a>
+  <button *ngIf="service.isCustomerLoggedIn()" type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <a *ngIf="service.isCustomerLoggedIn()" routerLink="/update" class="nav-item active nav-link">Update Profile</a>
+          <a *ngIf="service.isCustomerLoggedIn()" routerLink="/getorders" class="nav-item active nav-link">My Orders</a>
+          <a *ngIf="service.isCustomerLoggedIn()" routerLink="/updateAddress" class="nav item active nav-link">Update Address</a>
+          <a routerLink="/updatePassword" class="nav item active nav-link">Change Password</a>
+      </ul>
+
+      <form action="#" method="post" class="form-inline my-2 mylg-0">
+              <button *ngIf="service.isCustomerLoggedIn()" style="margin-right: 300px"  type="button" class="btn btn-outline-success" (click)="displayCart()">
+                <span>  <span class="glyphicon glyphicon-shopping-cart"></span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>  Shopping Cart
+              </button> 
+          <button *ngIf="service.isCustomerLoggedIn()" class="btn btn-outline-danger" (click)="customerLogout()" >Logout</button>
+      </form>
+  </div>
+</nav>

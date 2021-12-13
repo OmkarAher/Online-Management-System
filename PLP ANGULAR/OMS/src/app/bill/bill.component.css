@@ -1,0 +1,17 @@
+.bg{
+    min-height: 100vh;
+    background-image: url('/src/assets/7.jpg');
+    background-size: cover;
+}
+tr{
+    color:white
+}
+td{
+    color: white
+}
+th{
+    color: white
+}
+h1{
+    color:white
+}

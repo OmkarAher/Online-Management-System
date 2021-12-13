@@ -1,0 +1,13 @@
+package com.cg.oms.beans;
+
+public class OrderInfo {
+
+	private int orderId;
+	private int cartId;
+	private String product1Name;
+	private String product2Name;
+	private String product3Name;
+	private double totalPrice;
+	
+
+}

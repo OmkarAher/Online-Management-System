@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="javax.persistence.Query"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.cg.oms.beans.Cart"/>
+<fullyQualifiedTypeName name="javax.persistence.TypedQuery"/>
+<fullyQualifiedTypeName name="com.cg.oms.beans.CustomerAddress"/>
+<fullyQualifiedTypeName name="com.cg.oms.beans.Product"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.ComponentScan"/>
+<fullyQualifiedTypeName name="com.cg.oms.services.NotificationService"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.springframework.mail.MailException"/>
+<fullyQualifiedTypeName name="com.cg.oms.beans.OrderInfo"/>
+<fullyQualifiedTypeName name="com.cg.oms.beans.Customer"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,40 @@
+<app-header></app-header>
+<body class="bg">
+  
+
+      <h1  class="h1 text-center">Bill</h1>
+      <table  class="table table-bordered" id="cart">
+          
+        <tr>
+         <th>Product Name</th>
+         <th>Quantity</th>
+         <th>Address</th>
+        
+      
+      </tr>
+      <tr  *ngIf="posts.product1Id!=0 && posts.product1Count!=0">
+          <td>{{posts.product1Name}}</td>
+          <td>{{posts.product1Count}}</td>
+          <td>{{posts.address.apartment}} {{posts.address.street}}</td>
+          
+          </tr>
+      <tr *ngIf="posts.product2Id!=0 && posts.product2Count!=0" >
+          <td>{{posts.product2Name}}</td>
+          <td>{{posts.product2Count}}</td>
+          
+       
+      </tr>
+      <tr  *ngIf="posts.product3Id!=0 && posts.product3Count!=0"  >
+          <td>{{posts.product3Name}}</td>
+          <td>{{posts.product3Count}}</td>
+          
+       
+      </tr>
+          <tr >
+              <th colspan="2"> Total price</th>
+            <th >{{posts.totalPrice}}</th>
+         </tr>   
+         </table>
+         <div style="color: white
+         ">For More Info Go To <a routerLink="/getorders">My Orders</a></div>
+        </body>       

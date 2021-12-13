@@ -1,0 +1,50 @@
+
+package com.cg.oms.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailException;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Service;
+
+import com.cg.oms.beans.Customer;
+
+@Service
+public class NotificationService {
+	Customer customer;
+
+	
+	private JavaMailSender javaMailSender;
+	
+	@Autowired
+	public NotificationService(JavaMailSender javaMailSender) {
+		this.javaMailSender=javaMailSender;
+	}
+	
+	public void sendNotificatonTo(Customer customer) throws MailException{
+		SimpleMailMessage mail = new SimpleMailMessage();
+		mail.setTo(customer.getEmail());
+	
+		mail.setFrom("projecthub10@gmail.com");
+		mail.setSubject("Registration");
+		mail.setText("Welcome"+customer.getCustomerName());
+		javaMailSender.send(mail);
+		
+	}
+	public void sendOrderNotificationTo(Order order) throws MailException{
+		SimpleMailMessage mail = new SimpleMailMessage();
+		mail.setTo(customer.getEmail());
+		
+		mail.setFrom("projecthub10@gmail.com");
+		mail.setSubject("Bill Order");
+		
+		//set order details
+		
+		mail.setText("Order Details");
+	
+		
+
+
+		
+	}
+}

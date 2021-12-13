@@ -1,0 +1,87 @@
+
+<body class="bg">
+  <app-header></app-header>
+
+<div class="col-md-4 offset-4 mt-4 card" style="background: transparent">
+  <div class="card-body" style="background: transparent">
+    <h1 class="h1 text-center" style="color: white">Update Profile</h1>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+
+      <!-- <div class="form-group">
+        <label for="userid" style="color: white">CustomerId</label>
+        <input type="text" class="form-control" name="customerId" formControlName="customerId">
+        <div class="text-danger" *ngIf="customerId.invalid && (customerId.dirty || customerId.touched)">
+          <div *ngIf="customerId.errors['required']">CustomerId is Required</div>
+        <div *ngIf="customerId.errors['uniqueId']">CustomerId already Exist</div> -->
+        <!-- </div>
+      </div> --> 
+      <div class="form-group">
+        <label for="username" style="color: white">Customer Name</label>
+
+        <input type="text" id="username" name="customerName" class="form-control" required
+          formControlName="customerName">
+        <div class="text-danger" *ngIf="customerName.touched && customerName.invalid"> UserName is
+          Required</div>
+
+        <div class="form-group">
+          <label for="email" style="color: white">Email-Id</label>
+
+          <input type="email" id="email" name="email" class="form-control" formControlName="email">
+          <div class="text-danger" *ngIf="email.invalid && email.touched"> 
+           Email Required
+          </div>
+          <div class="text-danger" *ngIf="email.invalid && email.touched"> 
+              Provide Proper Email
+             </div>  
+        </div>
+
+        <div class="form-group">
+          <label for="moble" style="color: white">Contact Number</label>
+
+          <input type="text" id="mobile" class="form-control" name="contact" formControlName="contact" (input)="mobile($event)" maxlength="10">
+          <div class="alert alert-danger mt-2" *ngIf="contact.touched && contact.invalid"> Proper Mobile Number is Required
+          </div>
+          <div class="alert alert-danger mt-2" *ngIf="init()">Mobile Number is 10 digits
+            </div>
+         
+        </div>
+        <div class="form-group">
+          <label for="age" style="color: white">Age</label>
+
+          <input type="text" id="age" class="form-control" name="age" formControlName="age" maxlength="2" (input)="checkAge($event)">
+          <div class="alert alert-danger mt-2" *ngIf="age.touched && age.invalid">Proper Age Required</div>
+          <div class="alert alert-danger mt-2" *ngIf="init()">Proper Age Required</div>
+    
+        </div>
+
+        <div class="form-group">
+          <label for="gender" style="color: white">Gender</label>
+
+          <input type="text" id="gender" class="form-control" name="gender" formControlName="gender">
+          
+        </div>
+        <div class="form-group">
+          <label for="password" style="color: white">Password</label>
+          <input type="password" id="password" class="form-control" name="password" required formControlName="password">
+          <div class="alert alert-danger mt-2" *ngIf="password.touched && password.invalid">Password is Required</div>
+          <div class="alert alert-danger mt-2" *ngIf="password.touched && password.invalid">Min Length of Password is 4 fields </div>
+        </div>
+
+        <br>
+        <div class="form-group">
+          <input class="btn btn-info float-left" type="reset" value="Reset">
+          <button [disabled]="registerForm.invalid" class="btn btn-primary float-right" type="submit" >Submit</button>
+        </div>
+      </div>
+
+      
+
+    </form>
+
+
+  </div>
+
+
+</div>
+</body>

@@ -1,0 +1,34 @@
+
+<body class="loginbody">
+<div class="col-md-4 offset-4 mt-4 card">
+  <div class="card-body">
+      <h1 class="h1 text-center" style="color: black">Admin Login</h1>
+    <form action="/admin/adminLogin" [formGroup]="loginform" (ngSubmit)="onSubmit()" method="POST">
+      <div class="form-group">
+        <label for="adminId">Admin Id</label>
+        <input formControlName="adminId" type="number" class="form-control"
+        name="adminId">
+        <div class="alert alert-danger" *ngIf = "adminId.touched && adminId.invalid">
+        <div *ngIf = "adminId.errors.required">Requied</div> 
+        <div *ngIf = "adminId.errors.minlength">Admin Id should be of 4 numbers</div>
+        <div *ngIf = "adminId.errors.maxlength">Admin Id should be of 4 numbers</div>
+
+      </div>
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="Password">Password</label>
+          <input formControlName="password" type="password" class="form-control" id="password" name="password" >
+          <div class="alert alert-danger" *ngIf = "password.touched && password.invalid">
+            <div *ngIf = "password.errors.required">Requied</div>
+            <div *ngIf = "password.errors.minlength">Password Minimum Length is 4</div>
+            </div>
+        <br>
+          <button [disabled]="loginform.invalid" class="btn  btn-info float-left">Login</button>
+        </div>
+        <br>
+        <p style="color: red"> {{msg}}</p>
+    </form>
+  </div>
+</div>
+</body>

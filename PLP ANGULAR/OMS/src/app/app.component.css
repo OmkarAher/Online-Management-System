@@ -1,0 +1,8 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+body{
+    min-height: 100vh;
+    height: 100vh;
+}
+html{
+    height:100vh;
+}

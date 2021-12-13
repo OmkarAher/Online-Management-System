@@ -1,0 +1,16 @@
+.jumbotron{
+ background-color: rgb(255, 208, 0);   
+}
+
+
+.container{
+
+    background-color: azure;
+}
+.bg{
+    
+        min-height: 100vh;
+        background-image: url('/src/assets/7.jpg');
+        background-size: cover;
+    
+}

@@ -1,0 +1,25 @@
+<app-adminsidebar></app-adminsidebar>
+
+                <div class="container" >
+                    <h4 class="h4 text-center">::Searched Product::</h4>
+                  <table class="table table-bordered" style="margin-left: 10%; border-top:10%">
+                      <tr><th>Product Id</th>
+                      <th>Product Name</th>
+                      <th>category</th>
+                      <th>quantity</th>
+                      <th>Price</th>
+                      <th>Description</th>
+                      <th>Remove</th>
+                    </tr>
+                      <tr *ngFor="let product of productsearch">
+                      <td>{{product.productId}}</td>
+                      <td>{{product.productName}}</td>
+                      <td>{{product.category}}</td>
+                      <td>{{product.quantity}}</td>
+                      <td>{{product.price}}</td>
+                      <td>{{product.description}}</td>
+                      <td><button class="btn btn-danger" (click)="removeProduct(product)">Remove </button></td></tr>
+                      </table>
+                      <div style="color: red;margin-left: 10%">{{msg}}</div>
+                    </div>
+                  
